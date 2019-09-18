@@ -13,13 +13,17 @@ Dark green: #28b485
     box-sizing: border-box; /*zadaetbrazmer bloka*/
 }
 
+/*.logo {
+    animation: moveInRight 3s ease-out;*/ /*ANIMATION LOGO*/
+/*}*/
+
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400; /*насыщенность шрифта*/
     font-size: 16px; /*размер шрифта*/
     line-height: 1.7; /*межстрочный интервал*/
     color: #777;  
-    padding: 30px; 
+    padding: 30px; /*otstyp vnytri elementa*/
 }
 
 .header{ /*class="header"*/
@@ -28,8 +32,122 @@ body {
         to right bottom,
         rgba(126,213,111,0.8),
         rgba(40,180,131,0.8)
-    ), url(../img/hero.jpg);
+    ), url(../img/hero.jpg); /*on met un contrast sur l'image eclairé"*/
     background-size: cover; /*dinamicheskoe izminenie image*/
     background-position: center; /*dinamicheskoe izmenenie po topy*/
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*dimansiryet v lubyu formy*/ /*https://bennettfeely.com/clippy/*/
+    position: relative; /*izmenenie pozizii*/
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;  /*otstyp s verhy*/
+    left: 40px; /*au milieu d'ecran*/
+}
+
+.logo {
+    height: 35px; /*taille du logo hauteur*/
+}
+
+.text-box {
+    position: absolute; /*Положение элемента задается свойствами left, top, right и bottom,*/
+    top: 40%; /*otstyp s verhy*/
+    left: 50%; /*au milieu d'ecran*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: white; /*couleur du texte*/
+    text-transform: uppercase; /*text devient grand*/
+    backface-visibility: hidden;
+    margin-bottom: 60px; /*otstyp ot niza text-box*/
+}
+
+.heading-primary-main {
+    display: block; /**/
+    font-size: 60px; /*размер шрифта*/
+    font-weight: 400; /*насыщенность шрифта*/
+    letter-spacing: 35px; /*otstyp mejdy bykvami*/
+
+    animation-name: moveInLeft; /*reference sur keyframe*/
+    animation-duration: 1s; /*durée d'animation*/
+    animation-timing-function: ease-out; /*speed slow and fast peredvijenia*/
+    /*animation-delay: 3s;*/ /*au moment quand la page se charge, 3s rien se passe*/
+    /*animation-iteration-count: 3;*/ //*3 fois affichages*/
+}
+
+.heading-primary-sub {
+    display: block; /**/
+    font-size: 20px; /*размер шрифта*/
+    font-weight: 400; /*насыщенность шрифта*/
+    letter-spacing: 17.4px; /*otstyp mejdy bykvami*/
+    animation: moveInRight 1s ease-out; /*srazy vuzuvaet keyframe s parametrami*/
+}
+
+@keyframes moveInLeft {
+   /*Start*/
+    0% {
+        opacity: 0; /*уровень прозрачности ot [0, 1]*/
+        transform: translateX(-100px); /*negatif gauche vers droit, et positif droit vers gauche*/
+    }
+
+    60% {
+        transform: rotate(120deg);
+    }
+
+    80% {
+        transform: translate(10px);
+    }
+
+    /*Finish*/
+    100% {
+        opacity: 1; /*уровень прозрачности ot [0, 1]*/
+        transform: translateY(-10px); /*opyskaetsa ne mnogo v vverx*/
+    }
+}
+@keyframes moveInRight {
+    /*Start*/
+    0% {
+        opacity: 0; /*уровень прозрачности ot [0, 1]*/
+        transform: translateX(100px); /*negatif gauche vers droit, et positif droit vers gauche*/
+    }
+
+    60% {
+        transform: rotate(-120deg);
+    }
+
+    80% {
+        transform: translate(-10px);
+    }
+
+    /*Finish*/
+    100% {
+        opacity: 1; /*уровень прозрачности ot [0, 1]*/
+        transform: translateY(10px); /*opyskaetsa ne mnogo v niz*/
+    }
+}
+
+.btn:link, .btn:visited { /**/
+    text-transform: uppercase; /*text toko big bykvami*/
+    text-decoration: none; /*po skolky eto link, on podcherknyt, to none ybiraet podcherkivanie*/
+    padding: 15px 40px; /*15px=otstyp verx niz*/ /*40px=otstyps leva i pravo*/
+    display: inline-block; /**/
+    border-radius: 100px; /*zakryglaet konci*/
+    transition: all .3s; /*effekt poavlenia knopki s 1 tochki za 0.3sec*/
+}
+
+.btn:hover { /* :hover kogda navodim mushky*/
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /*effekt teni pod knopkoi*/
+}
+
+.btn:active { /* :activekogda najali*/
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /*effekt teni pod knopkoi*/
+}
+
+.btn-white {
+    background-color: white;
+    color: #777;
 }
