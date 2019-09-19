@@ -1,0 +1,17 @@
+*::after::before {
+  margin: 0; /*otstyp elementov*/
+  padding: 0; /*otstyp vnytri elementa*/
+  box-sizing: inherit; /*zadaet razmer bloka*/
+}
+
+/*.logo {
+    animation: moveInRight 3s ease-out;*/ /*ANIMATION LOGO*/
+/*}*/
+
+html {
+  font-size: 10px;
+}
+
+body {
+  box-sizing: border-box; /*zadaet razmer bloka*/
+}

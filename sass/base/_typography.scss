@@ -1,0 +1,36 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400; /*насыщенность шрифта*/
+  /*font-size: 16px;*/ /*размер шрифта*/
+  line-height: 1.7; /*межстрочный интервал*/
+  color: $color-grey-dark;
+  padding: 30px; /*otstyp vnytri elementa*/
+}
+
+.heading-primary {
+  color: $color-white; /*couleur du texte*/
+  text-transform: uppercase; /*text devient grand*/
+  backface-visibility: hidden;
+  margin-bottom: 60px; /*otstyp ot niza text-box*/
+
+  &--main {
+    display: block; /**/
+    font-size: 60px; /*размер шрифта*/
+    font-weight: 400; /*насыщенность шрифта*/
+    letter-spacing: 35px; /*otstyp mejdy bykvami*/
+
+    animation-name: moveInLeft; /*reference sur keyframe*/
+    animation-duration: 1s; /*durée d'animation*/
+    animation-timing-function: ease-out; /*speed slow and fast peredvijenia*/
+    /*animation-delay: 3s;*/ /*au moment quand la page se charge, 3s rien se passe*/
+    /*animation-iteration-count: 3;*/ //*3 fois affichages*/
+  }
+
+  &--sub {
+    display: block; /**/
+    font-size: 20px; /*размер шрифта*/
+    font-weight: 400; /*насыщенность шрифта*/
+    letter-spacing: 17.4px; /*otstyp mejdy bykvami*/
+    animation: moveInRight 1s ease-out; /*srazy vuzuvaet keyframe s parametrami*/
+  }
+}

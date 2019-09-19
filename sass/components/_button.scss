@@ -1,0 +1,48 @@
+.btn {
+  &:link, &:visited { /**/
+    text-transform: uppercase; /*text toko big bykvami*/
+    text-decoration: none; /*po skolky eto link, on podcherknyt, to none ybiraet podcherkivanie*/
+    padding: 15px 40px; /*15px=otstyp verx niz*/ /*40px=otstyps leva i pravo*/
+    display: inline-block; /**/
+    border-radius: 100px; /*zakryglaet konci*/
+    transition: all .3s; /*effekt poavlenia knopki s 1 tochki za 0.3sec*/
+    position: relative;
+    font-size: 1.6rem;
+  }
+  &:hover { /* :hover kogda navodim mushky*/
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2); /*effekt teni pod knopkoi*/
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6); /*yvilichenie btn v 2 raza*/
+      opacity: 0; /*уровень прозрачности ot [0, 1]*/
+    }
+  }
+  &:active { /* :activekogda najali*/
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba($color-black, 0.2); /*effekt teni pod knopkoi*/
+  }
+  &--white {
+    background-color: $color-white; /*zvet fona*/
+    color: $color-grey-dark; /*zvet texta*/
+    &::after {
+      background-color: $color-white; /*zvet posle */
+    }
+  }
+  &::after {
+    content: ""; /*to shto napisano v nytri text*/
+    display: inline-block;
+    height: 100%; /*razmer*/
+    width: 100%; /*razmer*/
+    border-radius: 100px; /*okryglenie koncov knopki*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; /*effekt poavlenia knopki s 1 tochki za 0.4sec*/
+  }
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s; /*srazy vuzuvaet keyframe s parametrami*/
+    animation-fill-mode: backwards; /*poavlenie knopki backwards=s nizy v verh*/
+  }
+
+}

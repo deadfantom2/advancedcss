@@ -1,0 +1,49 @@
+@keyframes moveInLeft {
+  /*Start*/
+  0% {
+    opacity: 0; /*уровень прозрачности ot [0, 1]*/
+    transform: translateX(-100px); /*negatif gauche vers droit, et positif droit vers gauche*/
+  }
+
+  /*  60% {
+        transform: rotate(120deg);
+    }
+    80% {
+        transform: translate(10px);
+    }*/
+  /*Finish*/
+  100% {
+    opacity: 1; /*уровень прозрачности ot [0, 1]*/
+    transform: translateY(-10px); /*opyskaetsa ne mnogo v vverx*/
+  }
+}
+@keyframes moveInRight {
+  /*Start*/
+  0% {
+    opacity: 0; /*уровень прозрачности ot [0, 1]*/
+    transform: translateX(100px); /*negatif gauche vers droit, et positif droit vers gauche*/
+  }
+  /* 60% {
+       transform: rotate(-120deg);
+   }
+   80% {
+       transform: translate(-10px);
+   }*/
+  /*Finish*/
+  100% {
+    opacity: 1; /*уровень прозрачности ot [0, 1]*/
+    transform: translateY(10px); /*opyskaetsa ne mnogo v niz*/
+  }
+}
+@keyframes moveInBottom {
+  /*Start*/
+  0% {
+    opacity: 0; /*уровень прозрачности ot [0, 1]*/
+    transform: translateY(30px); /*opyskaetsa ne mnogo v niz*/
+  }
+  /*Finish*/
+  100% {
+    opacity: 1; /*уровень прозрачности ot [0, 1]*/
+    transform: translate(0px); /*stoit na meste*/
+  }
+}
