@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width; /*1140px*/
-  background-color: #eee;
   margin: 0 auto;
 
 
@@ -15,7 +14,6 @@
   //class* veut dire tous les class contiennent col-
   //cass*  veut dire tous les class finissent par col-
   [class^="col-"]{
-    background-color: orangered;
     float: left;
     // dla togo shtob ybrat na poslednim row otstyp v 80px
     &:not(:last-child){
@@ -24,7 +22,7 @@
   }
 
   .col-1-of-2{
-    width: calc((100% - #{$gutter-horizontal}) / 2);
+    width: calc((100% - #{$gutter-horizontal}) / 2);  /*60px*/
   }
 
   .col-1-of-3{

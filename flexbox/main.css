@@ -1,0 +1,5 @@
+.container {
+    display: flex; /*v 1 liniu*/
+    flex-direction: row;
+    justify-content: space-evenly;
+}
